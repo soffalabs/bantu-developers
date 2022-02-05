@@ -7,12 +7,14 @@ meta:
 branding:
   title: Bantu
   label: developers
-  logo: static/img/logo.svg
+  logo: static/img/logo5.svg
   logoDark: static/img/logo.svg
 links:
 - text: Accueil
   link: https://developers.bantu.dev
+  icon: home
 - text: Github
   link: https://github.com/orgs/DigitalBantu/dashboard
+  icon: mark-github
 footer:
   copyright: "By Startup Station, {{ year }}"
