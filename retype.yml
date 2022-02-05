@@ -1,0 +1,18 @@
+input: .
+output: ./docs
+url: https://developers.bantu.dev
+meta:
+  title: " | Bantu"
+
+branding:
+  title: Bantu
+  label: developers
+  logo: static/img/logo.svg
+  logoDark: static/img/logo.svg
+links:
+- text: Accueil
+  link: https://developers.bantu.dev
+- text: Github
+  link: https://github.com/orgs/DigitalBantu/dashboard
+footer:
+  copyright: "By Startup Station, {{ year }}"
