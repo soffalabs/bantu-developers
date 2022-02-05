@@ -23,7 +23,7 @@ d'étendre la solution.
 
 Ci-après la version actuelle de l'architecture :
 
-![](./static/img/bantu-archi-01.png)
+![](./static/img/bantu-archi-01b.png)
 
 
 | Composant             | Implémentation                                |
