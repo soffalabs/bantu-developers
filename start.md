@@ -34,14 +34,6 @@ curl -X 'POST' 'https://api.bantu.dev/accounts' \
     "email": "developer@email.com"
   }'
 
-# Exemple de réponse
-
-{
-  "success": true,
-  "accountId": "acc_1ib0yvl75q92b",
-  "message": "The api-key was sent to the provided email address"
-}
-
 ```
 +++ rest client (vscode)
 ```graphql
@@ -61,6 +53,16 @@ Content-Type: application/json
 ```
 +++
 
+
+Si votre requête est valide, vous recevrez une réponse JSON avec la structure suivante:
+
+```json
+{
+  "success": true,
+  "accountId": "acc_1ib0yvl75q92b",
+  "message": "The api-key was sent to the provided email address"
+}
+```
 
 | Champs   | Obligatoire | Description                  |
 |-         |-            |-                             |
