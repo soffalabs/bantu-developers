@@ -21,7 +21,7 @@ Pour développeur avec Bantu, les étapes suivantes sont à suivre:
 ## Compte développeur
 
 Pour commencer à utiliser les APIs de la plateforme, la création d'un compte développeur est nécessaire.
-Ceci est possible via <a href="http://46.101.77.127:10000/swagger-ui/index.html" target="_blank">l'API Accounts</a>.
+Ceci est possible via <a href="https://api.bantu.dev/accounts" target="_blank">l'API Accounts</a>.
 
 +++ curl
 ```bash
@@ -47,8 +47,8 @@ POST {{baseUrl}}/accounts
 Content-Type: application/json
 
 {
-    "name": "account-name",
-    "email": "developer@email.com"
+    "name": "account-name", # Nom du compte développeur
+    "email": "developer@email.com" # Email utilisée pour vous transmettre votre clé d'API.
 }
 ```
 +++
@@ -59,16 +59,10 @@ Si votre requête est valide, vous recevrez une réponse JSON avec la structure 
 ```json
 {
   "success": true,
-  "accountId": "acc_1ib0yvl75q92b",
+  "accountId": "acc_1ib0yvl75q92b", # Identifiant unique de votre compte
   "message": "The api-key was sent to the provided email address"
 }
 ```
-
-| Champs   | Obligatoire | Description                  |
-|-         |-            |-                             |
-|`name`      | Oui         | Nom du compte développeur    |
-|`email`     | Oui         | Cette adresse est utilisée pour vous transmettre votre clé d'API. Vous devez donc fournir une adresse valide    |
-
 
 !!! 
 Nous transmettons la clé d'API à votre email pour en effectuer la vérification en même temps.
@@ -91,4 +85,77 @@ Arpès création de votre compte développeur, si la clé d'API n'est pas utilis
 automatiquement détruit avec un email de notification.
 !!!
 
+### Unicité de l'email
+
+Parce que l'email utilisée lors de la création du compte est unique, si vous tentez de réutiliser une adresse existante,
+la demande sera rejetée avec la réponse suivante :
+
+```json
+{
+  "timestamp": "2022-02-08T21:23:04.653+00:00",
+  "timestamp": "2022-02-08T21:23:04.653+00:00",
+  "source": "bantu-accounts",
+  "kind": "ConflictException",
+  "status": 409,
+  "message": "account.email.exists",
+  "prod": true,
+  "traceId": "aaa1ec78-ddcc-4b01-b8e8-f4436fd967db", 
+  "spanId": "b779a13d-4d2d-46f5-b68e-1c783b6b441e",
+  "tenant": "default"
+}
+```
+
+
 ## Créer une application
+
+Un compte ne vous permet pas de faire grand chose sur la plateforme. 
+L'exploitation commence par la création d'une application qui a pour effet de :
+
+1. Créer une base de données (ou schéma) dédié.e à votre projet
+2. Générer des clés applicatives pour vous permettre de manipuler les APIs du catalogue
+
+
+!!!warning
+Lorsqu'un compte est supprimée, toutes les applications associées sont supprimées.
+Il n'est pas possible de revenir en arrière ou restaurer une sauvegarde.
+!!!
+
+
++++ rest-client (vscode)
+```graphql
+@baseUrl = https://api.bantu.dev
+@apikey = ak_00000000000 # remplacer par votre api key (compte)
+
+### ------------------------------------------------------------------------------
+### Créer votre compte développeur
+### ------------------------------------------------------------------------------
+
+POST {{baseUrl}}/accounts/v1/applications
+Content-Type: application/json
+Authorization: Basic {{apikey}}:
+
+{
+    "name": "my-application", # Nom de l'application (obligatoire en minuscules)
+    "description": "Application description" # Courte description (obligatoire)
+}
+```
++++
+
+
+Si votre requête est valide, la création de l'application retourne une réponse semblale à la suivante:
+
+```json
+{
+  "application": {
+    "id": "app_1ib9893gdtlcz", # Identifiant unique de votre application
+    "accountId": "acc_1iukwdd80pjxs", # ID du compte auquel est lié cette application
+    "name": "test-app", # Nom de l'application
+    "description": "Hello world", # Description de l'application
+    "pkTest": "pk_test_75UcmFeohlyQmwPlSd--w", # Clé privée de production
+    "skTest": "sk_test_woNOBFe94pe5_ErHkyWqKE", # Clé publique de production
+    "pkLive": "pk_live_uyO9mdn_kGi9ov0yJVD6v", # Clé privée de test
+    "skLive": "sk_live_85XknhLMcGS67A3ch6p91", # Clé publique de test
+    "createdAt": "2022-02-08T21:58:10.689+00:00" # Date de création du compte
+  }
+}
+```
