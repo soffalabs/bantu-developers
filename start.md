@@ -23,6 +23,7 @@ Pour développeur avec Bantu, les étapes suivantes sont à suivre:
 Pour commencer à utiliser les APIs de la plateforme, la création d'un compte développeur est nécessaire.
 Ceci est possible via <a href="http://46.101.77.127:10000/swagger-ui/index.html" target="_blank">l'API Accounts</a>.
 
++++ curl
 ```bash
 # Exemple de requête 
 
@@ -42,6 +43,24 @@ curl -X 'POST' 'https://api.bantu.dev/accounts' \
 }
 
 ```
++++ rest client (vscode)
+```graphql
+@baseUrl = https://api.bantu.dev
+
+### ------------------------------------------------------------------------------
+### Créer votre compte développeur
+### ------------------------------------------------------------------------------
+
+POST {{baseUrl}}/accounts
+Content-Type: application/json
+
+{
+    "name": "account-name",
+    "email": "developer@email.com"
+}
+```
++++
+
 
 | Champs   | Obligatoire | Description                  |
 |-         |-            |-                             |
