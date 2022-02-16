@@ -24,12 +24,12 @@
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/resources/css/retype.css?v=1.11.2.698369476804" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.698371055315" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.698369476804" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.698371055315" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.698369476804" defer></script>
-    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.2.698369476804" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.698371055315" defer></script>
+    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.2.698371055315" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -333,73 +333,6 @@ la demande sera rejetée avec la réponse suivante :</p>
   &quot;tenant&quot;: &quot;default&quot;
 }</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="créer-une-application">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#créer-une-application">#</doc-anchor-trigger>
-        <span>Créer une application</span>
-    </h2>
-</doc-anchor-target>
-<p>Un compte ne vous permet pas de faire grand chose sur la plateforme.
-L&#x27;exploitation commence par la création d&#x27;une application qui a pour effet de :</p>
-<ol>
-<li>Créer une base de données (ou schéma) dédié.e à votre projet</li>
-<li>Générer des clés applicatives pour vous permettre de manipuler les APIs du catalogue</li>
-</ol>
-<div class="flex mb-6">
-    <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
-                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3">
-<p>Lorsqu&#x27;un compte est supprimée, toutes les applications associées sont supprimées.
-Il n&#x27;est pas possible de revenir en arrière ou restaurer une sauvegarde.</p>
-        </div>
-    </div>
-</div>
-<doc-tabs>
-<doc-tab id="rest-client-vscode">
-<template #title>rest-client (vscode)</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-graphql"><code v-pre class="language-graphql">@baseUrl = https://api.bantu.dev
-@apikey = ak_00000000000 # remplacer par votre api key (compte)
-
-### ------------------------------------------------------------------------------
-### Créer votre compte développeur
-### ------------------------------------------------------------------------------
-
-POST {{baseUrl}}/accounts/v1/applications
-Content-Type: application/json
-Authorization: Basic {{apikey}}:
-
-{
-    &quot;name&quot;: &quot;my-application&quot;, # Nom de l'application (obligatoire en minuscules)
-    &quot;description&quot;: &quot;Application description&quot; # Courte description (obligatoire)
-}</code></pre>
-</doc-codeblock></div>
-</doc-tab>
-</doc-tabs>
-<p>Si votre requête est valide, la création de l&#x27;application retourne une réponse semblale à la suivante:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-json"><code v-pre class="language-json">{
-  &quot;application&quot;: {
-    &quot;id&quot;: &quot;app_1ib9893gdtlcz&quot;, # Identifiant unique de votre application
-    &quot;accountId&quot;: &quot;acc_1iukwdd80pjxs&quot;, # ID du compte auquel est lié cette application
-    &quot;name&quot;: &quot;test-app&quot;, # Nom de l'application
-    &quot;description&quot;: &quot;Hello world&quot;, # Description de l'application
-    &quot;pkTest&quot;: &quot;pk_test_75UcmFeohlyQmwPlSd--w&quot;, # Clé privée de production
-    &quot;skTest&quot;: &quot;sk_test_woNOBFe94pe5_ErHkyWqKE&quot;, # Clé publique de production
-    &quot;pkLive&quot;: &quot;pk_live_uyO9mdn_kGi9ov0yJVD6v&quot;, # Clé privée de test
-    &quot;skLive&quot;: &quot;sk_live_85XknhLMcGS67A3ch6p91&quot;, # Clé publique de test
-    &quot;createdAt&quot;: &quot;2022-02-08T21:58:10.689+00:00&quot; # Date de création du compte
-  }
-}</code></pre>
-</doc-codeblock></div>
 
 
 
@@ -411,7 +344,7 @@ Authorization: Basic {{apikey}}:
             
 <nav class="flex mt-14">
     <div class="w-1/2">
-        <a class="px-5 py-4 h-full flex items-center break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/">
+        <a class="px-5 py-4 h-full flex items-center break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/">
             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
             <span>
                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
@@ -421,6 +354,13 @@ Authorization: Basic {{apikey}}:
     </div>
 
     <div class="w-1/2">
+        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/applications/">
+            <span>
+                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                <span class="block mt-1">Applications</span>
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+        </a>
     </div>
 </nav>
 
