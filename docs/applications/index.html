@@ -24,12 +24,12 @@
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/resources/css/retype.css?v=1.11.2.698372049139" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.698624768427" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.698372049139" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.698624768427" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.698372049139" defer></script>
-    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.2.698372049139" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.698624768427" defer></script>
+    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.2.698624768427" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -218,8 +218,8 @@ Nous publions chaque mois de nouvelles API pour disposer d&#x27;un riche catalog
 <p>Un compte ne vous permet pas de faire grand chose sur la plateforme.
 L&#x27;exploitation commence par la création d&#x27;une application qui a pour effet de :</p>
 <ol>
-<li>Créer une base de données (ou schéma) dédié.e à votre projet</li>
-<li>Générer des clés applicatives pour vous permettre de manipuler les APIs du catalogue</li>
+<li>Créer de deux schémas de données (production + test) dédiés à votre projet</li>
+<li>Générer des clés applicatives pour vous permettre de manipuler les APIs du catalogue en modes <strong>live</strong> (production) et <strong>test</strong>.</li>
 </ol>
 <div class="flex mb-6">
     <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
@@ -233,22 +233,17 @@ L&#x27;exploitation commence par la création d&#x27;une application qui a pour 
             </svg>
         </div>
         <div class="pr-5 ml-3">
-<p>Lorsqu&#x27;un compte est supprimé, toutes les applications associées sont supprimées.
-Il n&#x27;est pas possible de revenir en arrière ou restaurer une sauvegarde.</p>
-<p>De même, lorsqu&#x27;une application est supprimée, la base de données liée à cette
-application est détruite de façon définitive.</p>
+<p>Lorsqu&#x27;un compte ou une application est supprimé.e, toutes les données associées sont supprimées au bout de 7 jours.
+Durant cette période de grâce, il est toujours possible de revenir sur votre décision.</p>
         </div>
     </div>
 </div>
-<doc-tabs>
-<doc-tab id="rest-client-vscode">
-<template #title>rest-client (vscode)</template>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-graphql"><code v-pre class="language-graphql">@baseUrl = https://api.bantu.dev
-@apikey = ak_00000000000 # remplacer par votre api key (compte)
+<pre class="language-graphql"><code v-pre class="language-graphql">@baseUrl = https://sandbox.bantu.dev
+@apikey = ak_00000000000 # remplacer par votre api key (Account)
 
 ### ------------------------------------------------------------------------------
-### Créer votre compte développeur
+### Créer une application
 ### ------------------------------------------------------------------------------
 
 POST {{baseUrl}}/accounts/v1/applications
@@ -260,8 +255,6 @@ Authorization: Basic {{apikey}}:
     &quot;description&quot;: &quot;Application description&quot; # Courte description (obligatoire)
 }</code></pre>
 </doc-codeblock></div>
-</doc-tab>
-</doc-tabs>
 <p>Si votre requête est valide, la création de l&#x27;application retourne une réponse semblale à la suivante:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-json"><code v-pre class="language-json">{
@@ -278,18 +271,21 @@ Authorization: Basic {{apikey}}:
   }
 }</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="mettre-à-jour-les-informations-dune-application">
+<doc-anchor-target id="consommer-lapi-todos">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#mettre-à-jour-les-informations-dune-application">#</doc-anchor-trigger>
-        <span>Mettre à jour les informations d&#x27;une application</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#consommer-lapi-todos">#</doc-anchor-trigger>
+        <span>Consommer l&#x27;Api Todos</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="supprimer-une-application">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#supprimer-une-application">#</doc-anchor-trigger>
-        <span>Supprimer une application</span>
-    </h2>
-</doc-anchor-target>
+<p>Nous avons mis en place un service <strong>Todos</strong> à des fins purement éducatives.
+Ce simple service vous permet de comprendre rapidement les principes de bases qui s&#x27;appliquent  à tout le catalogue de services.</p>
+<p>La documentation (OpenAPI) du service est <a href="https://sandbox.bantu.dev/todos/swagger-ui.html" target="_blank">disponible ici</a>.</p>
+<p>Trois opérations sont disponibles :</p>
+<ol>
+<li>Visualiser les TODO</li>
+<li>Rajouter <em>une</em> TODO (si l&#x27;on considère que TODO est une action/tâche)</li>
+<li>Marquer une TODO comme terminée</li>
+</ol>
 
 
 

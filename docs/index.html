@@ -8,29 +8,29 @@
     <!-- Primary Meta Tags -->
     <title>Introduction | Bantu</title>
     <meta name="title" content="Introduction | Bantu">
-    <meta name="description" content="Bantu est un socle de services et d'APIs permettant aux développeurs et entreprises de créer des solutions pour leurs" />
+    <meta name="description" content="Bantu est une offre ( Backend As A Service) permettant aux développeurs de créer certaines solutions plus simplement en se basant sur" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://developers.bantu.dev/">
     <meta property="og:title" content="Introduction | Bantu">
-    <meta property="og:description" content="Bantu est un socle de services et d'APIs permettant aux développeurs et entreprises de créer des solutions pour leurs">
+    <meta property="og:description" content="Bantu est une offre ( Backend As A Service) permettant aux développeurs de créer certaines solutions plus simplement en se basant sur">
     <meta property="og:image" content="https://developers.bantu.dev/static/img/bantu-archi.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://developers.bantu.dev/">
     <meta property="twitter:title" content="Introduction | Bantu">
-    <meta property="twitter:description" content="Bantu est un socle de services et d'APIs permettant aux développeurs et entreprises de créer des solutions pour leurs">
+    <meta property="twitter:description" content="Bantu est une offre ( Backend As A Service) permettant aux développeurs de créer certaines solutions plus simplement en se basant sur">
     <meta property="twitter:image" content="https://developers.bantu.dev/static/img/bantu-archi.png">
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/resources/css/retype.css?v=1.11.2.698372049139" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.698624768427" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.698372049139" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.698624768427" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.698372049139" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.698624768427" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -208,21 +208,12 @@
         <span>Introduction</span>
     </h1>
 </doc-anchor-target>
-<p>Bantu est un socle de services et d&#x27;APIs permettant aux développeurs et entreprises de créer des solutions pour leurs
-clients finaux.
-Ce socle vous permet de ne pas réinventer la roue à plusieurs égards tout en offrant la flexibilité nécessaire pour
-vos besoins spécifiques.</p>
-<p>Tout au long de cette documentation développeurs, plusieurs exemples concrets seront apportés pour illustrer l&#x27;usage
-et la valeur ajoutée d&#x27;utiliser Bantu.</p>
-<doc-anchor-target id="fondamentaux">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fondamentaux">#</doc-anchor-trigger>
-        <span>Fondamentaux</span>
-    </h2>
-</doc-anchor-target>
-<p>Bantu est une solution qui combine des solutions open-sources et du développement interne. Tous les développements que
-nous faisons sont essentiellement en Java pour permettre à la plupart des entreprises et développeurs que nous ciblons
-d&#x27;étendre la solution.</p>
+<p>Bantu est une offre (<em>Backend As A Service</em>) permettant aux développeurs de créer certaines solutions plus simplement en se basant sur
+un catalogue de services.</p>
+<p>Cette offre permet de ne pas réinventer la roue à plusieurs égards tout en offrant une certaine flexibilité  pour des besoins spécifiques
+même si tout est fait pour réduire ces scénarios.</p>
+<p>Tout au long de cette documentation (orientée développeurs), plusieurs exemples concrets seront apportés pour illustrer l&#x27;usage
+et la valeur ajoutée de l&#x27;offre.</p>
 <doc-anchor-target id="architecture">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#architecture">#</doc-anchor-trigger>
@@ -269,8 +260,8 @@ d&#x27;étendre la solution.</p>
 <td>Consul</td>
 </tr>
 <tr>
-<td>MQ</td>
-<td>RabbitMQ, NATS.io</td>
+<td>Streaming</td>
+<td>NATS.io</td>
 </tr>
 <tr>
 <td>Messages Provider*</td>

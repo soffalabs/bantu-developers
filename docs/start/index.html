@@ -8,28 +8,28 @@
     <!-- Primary Meta Tags -->
     <title>Bien d&#233;marrer | Bantu</title>
     <meta name="title" content="Bien démarrer | Bantu">
-    <meta name="description" content="La plateforme bantu dispose de deux pointées d'entrée:" />
+    <meta name="description" content="Les points d'entrées suivants sont mis à votre disposition :" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://developers.bantu.dev/start/">
     <meta property="og:title" content="Bien démarrer | Bantu">
-    <meta property="og:description" content="La plateforme bantu dispose de deux pointées d'entrée:">
+    <meta property="og:description" content="Les points d'entrées suivants sont mis à votre disposition :">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://developers.bantu.dev/start/">
     <meta property="twitter:title" content="Bien démarrer | Bantu">
-    <meta property="twitter:description" content="La plateforme bantu dispose de deux pointées d'entrée:">
+    <meta property="twitter:description" content="Les points d'entrées suivants sont mis à votre disposition :">
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/resources/css/retype.css?v=1.11.2.698372049139" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.698624768427" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.698372049139" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.698624768427" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.698372049139" defer></script>
-    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.2.698372049139" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.698624768427" defer></script>
+    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.2.698624768427" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -207,18 +207,35 @@
         <span>Démarrer</span>
     </h1>
 </doc-anchor-target>
-<p>La plateforme bantu dispose de deux pointées d&#x27;entrée:</p>
+<p>Les points d&#x27;entrées suivants sont mis à votre disposition :</p>
 <ul>
-<li><a href="https://api.bantu.dev">https://api.bantu.dev</a> — API Gateway</li>
-<li><a href="https://identity.bantu.dev">https://identity.bantu.dev</a> — Identity Provider</li>
+<li><a href="https://sandbox.bantu.dev">https://sandbox.bantu.dev</a>  - Sandbox</li>
+<li><a href="https://api.bantu.dev">https://api.bantu.dev</a>  - Production (Disponible plus tard)</li>
 </ul>
-<p>Le premier point d&#x27;entrée est certainement celui qui sera le plus utilisé.</p>
-<p>Pour développeur avec Bantu, les étapes suivantes sont à suivre:</p>
+<p>Pour développer avec Bantu, les étapes suivantes sont à suivre:</p>
 <ol>
 <li>Créer un compte développeur pour récupérer une clé d&#x27;API de type compte</li>
 <li>Créer une application pour récupérer des clés d&#x27;API de type application</li>
 <li>Utiliser les clés d&#x27;api de type application pour exploiter le reste du catalogue d&#x27;APIs</li>
 </ol>
+<div class="flex mb-6">
+    <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3">
+<p>Les différents exemples de requêtes  sont construits avec <a href="https://code.visualstudio.com" target="_blank" alt="">Visual Studio Code</a> et
+le plugin <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client" target="_blank">RestClient</a></p>
+        </div>
+    </div>
+</div>
 <doc-anchor-target id="compte-développeur">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#compte-développeur">#</doc-anchor-trigger>
@@ -226,30 +243,12 @@
     </h2>
 </doc-anchor-target>
 <p>Pour commencer à utiliser les APIs de la plateforme, la création d&#x27;un compte développeur est nécessaire.
-Ceci est possible via <a href="https://api.bantu.dev/accounts" target="_blank">l&#x27;API Accounts</a>.</p>
-<doc-tabs>
-<doc-tab id="curl">
-<template #title>curl</template>
+Ceci est possible via <a href="https://sandbox.bantu.dev/accounts/swagger-ui.html" target="_blank">l&#x27;API Accounts</a>.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash"># Exemple de requête 
+<pre class="language-graphql"><code v-pre class="language-graphql"># rest client (vscode)
+@baseUrl = https://sandbox.bantu.dev
 
-curl -X 'POST' 'https://api.bantu.dev/accounts' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    &quot;name&quot;: &quot;account-name&quot;,
-    &quot;email&quot;: &quot;developer@email.com&quot;
-  }'
-</code></pre>
-</doc-codeblock></div>
-</doc-tab>
-<doc-tab id="rest-client-vscode">
-<template #title>rest client (vscode)</template>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-graphql"><code v-pre class="language-graphql">@baseUrl = https://api.bantu.dev
-
-### ------------------------------------------------------------------------------
-### Créer votre compte développeur
-### ------------------------------------------------------------------------------
+## Créer votre compte développeur
 
 POST {{baseUrl}}/accounts
 Content-Type: application/json
@@ -259,12 +258,9 @@ Content-Type: application/json
     &quot;email&quot;: &quot;developer@email.com&quot; # Email utilisée pour vous transmettre votre clé d'API.
 }</code></pre>
 </doc-codeblock></div>
-</doc-tab>
-</doc-tabs>
 <p>Si votre requête est valide, vous recevrez une réponse JSON avec la structure suivante:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-json"><code v-pre class="language-json">{
-  &quot;success&quot;: true,
   &quot;accountId&quot;: &quot;acc_1ib0yvl75q92b&quot;, # Identifiant unique de votre compte
   &quot;message&quot;: &quot;The api-key was sent to the provided email address&quot;
 }</code></pre>
@@ -286,7 +282,7 @@ Content-Type: application/json
         </div>
     </div>
 </div>
-<p>Lorsque la création du comtpe développeur abouti, le mail transmis contient les informations suivantes:</p>
+<p>Lorsque la création du comtpe développeur aboutit, le mail transmis contient les informations suivantes:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Exemple d&#x27;email</div>
 <pre class="language-none"><code v-pre class="language-none">Your account has been created.
@@ -306,7 +302,7 @@ Your api key is ak_VrDi2KTxKQeR5Zf9DV6GX</code></pre>
             </svg>
         </div>
         <div class="pr-5 ml-3">
-<p>Arpès création de votre compte développeur, si la clé d&#x27;API n&#x27;est pas utilisée pour créer une application au bout de 7 jours, le compte est
+<p>Arpès création de votre compte développeur, si la clé d&#x27;API n&#x27;est pas utilisée pour créer une application au bout de 14 jours, le compte est
 automatiquement détruit avec un email de notification.</p>
         </div>
     </div>
