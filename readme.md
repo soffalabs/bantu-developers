@@ -4,20 +4,14 @@ icon: home
 ---
 # Introduction
 
-Bantu est un socle de services et d'APIs permettant aux développeurs et entreprises de créer des solutions pour leurs
-clients finaux.
-Ce socle vous permet de ne pas réinventer la roue à plusieurs égards tout en offrant la flexibilité nécessaire pour
-vos besoins spécifiques.
+Bantu est une offre (<em>Backend As A Service</em>) permettant aux développeurs de créer certaines solutions plus simplement en se basant sur
+un catalogue de services.
 
-Tout au long de cette documentation développeurs, plusieurs exemples concrets seront apportés pour illustrer l'usage
-et la valeur ajoutée d'utiliser Bantu.
+Cette offre permet de ne pas réinventer la roue à plusieurs égards tout en offrant une certaine flexibilité  pour des besoins spécifiques
+même si tout est fait pour réduire ces scénarios.
 
-
-## Fondamentaux
-
-Bantu est une solution qui combine des solutions open-sources et du développement interne. Tous les développements que
-nous faisons sont essentiellement en Java pour permettre à la plupart des entreprises et développeurs que nous ciblons
-d'étendre la solution.
+Tout au long de cette documentation (orientée développeurs), plusieurs exemples concrets seront apportés pour illustrer l'usage
+et la valeur ajoutée de l'offre.
 
 ## Architecture
 
@@ -34,7 +28,7 @@ Ci-après la version actuelle de l'architecture :
 | Analytics             | InfluxDB, Prometheus                          |
 | Config                | Vault                                         |
 | Service Registry      | Consul                                        |
-| MQ                    | RabbitMQ, NATS.io                             |
+| Streaming             | NATS.io                             |
 | Messages Provider*    | Offre cloud (Twilio) - Offre hébergée (varie) |
 
 

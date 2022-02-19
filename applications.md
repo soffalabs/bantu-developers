@@ -14,26 +14,22 @@ Nous publions chaque mois de nouvelles API pour disposer d'un riche catalogue.
 Un compte ne vous permet pas de faire grand chose sur la plateforme. 
 L'exploitation commence par la création d'une application qui a pour effet de :
 
-1. Créer une base de données (ou schéma) dédié.e à votre projet
-2. Générer des clés applicatives pour vous permettre de manipuler les APIs du catalogue
+1. Créer de deux schémas de données (production + test) dédiés à votre projet
+2. Générer des clés applicatives pour vous permettre de manipuler les APIs du catalogue en modes **live** (production) et **test**.
 
 
 !!!warning
-Lorsqu'un compte est supprimé, toutes les applications associées sont supprimées.
-Il n'est pas possible de revenir en arrière ou restaurer une sauvegarde.
-
-De même, lorsqu'une application est supprimée, la base de données liée à cette
-application est détruite de façon définitive.
+Lorsqu'un compte ou une application est supprimé.e, toutes les données associées sont supprimées au bout de 7 jours.
+Durant cette période de grâce, il est toujours possible de revenir sur votre décision.
 !!!
 
 
-+++ rest-client (vscode)
 ```graphql
-@baseUrl = https://api.bantu.dev
-@apikey = ak_00000000000 # remplacer par votre api key (compte)
+@baseUrl = https://sandbox.bantu.dev
+@apikey = ak_00000000000 # remplacer par votre api key (Account)
 
 ### ------------------------------------------------------------------------------
-### Créer votre compte développeur
+### Créer une application
 ### ------------------------------------------------------------------------------
 
 POST {{baseUrl}}/accounts/v1/applications
@@ -45,7 +41,6 @@ Authorization: Basic {{apikey}}:
     "description": "Application description" # Courte description (obligatoire)
 }
 ```
-+++
 
 
 Si votre requête est valide, la création de l'application retourne une réponse semblale à la suivante:
@@ -66,6 +61,15 @@ Si votre requête est valide, la création de l'application retourne une répons
 }
 ```
 
-## Mettre à jour les informations d'une application
+## Consommer l'Api Todos
 
-## Supprimer une application
+Nous avons mis en place un service **Todos** à des fins purement éducatives.
+Ce simple service vous permet de comprendre rapidement les principes de bases qui s'appliquent  à tout le catalogue de services.
+
+La documentation (OpenAPI) du service est <a href="https://sandbox.bantu.dev/todos/swagger-ui.html" target="_blank">disponible ici</a>.
+
+Trois opérations sont disponibles :
+
+1. Visualiser les TODO
+2. Rajouter *une* TODO (si l'on considère que TODO est une action/tâche)
+3. Marquer une TODO comme terminée

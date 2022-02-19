@@ -5,43 +5,37 @@ title: Bien démarrer
 ---
 # Démarrer
 
-La plateforme bantu dispose de deux pointées d'entrée:
+Les points d'entrées suivants sont mis à votre disposition :
 
-- https://api.bantu.dev &mdash; API Gateway
-- https://identity.bantu.dev &mdash; Identity Provider
+- https://sandbox.bantu.dev  - Sandbox
+- https://api.bantu.dev  - Production (Disponible plus tard)
 
-Le premier point d'entrée est certainement celui qui sera le plus utilisé.
 
-Pour développeur avec Bantu, les étapes suivantes sont à suivre:
+Pour développer avec Bantu, les étapes suivantes sont à suivre:
 
 1. Créer un compte développeur pour récupérer une clé d'API de type compte
 2. Créer une application pour récupérer des clés d'API de type application
 3. Utiliser les clés d'api de type application pour exploiter le reste du catalogue d'APIs
 
+!!!
+Les différents exemples de requêtes  sont construits avec <a href="https://code.visualstudio.com" target="_blank" alt="">Visual Studio Code</a> et
+le plugin <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client" target="_blank">RestClient</a>
+!!!
+
+
+
 ## Compte développeur
 
 Pour commencer à utiliser les APIs de la plateforme, la création d'un compte développeur est nécessaire.
-Ceci est possible via <a href="https://api.bantu.dev/accounts" target="_blank">l'API Accounts</a>.
+Ceci est possible via <a href="https://sandbox.bantu.dev/accounts/swagger-ui.html" target="_blank">l'API Accounts</a>.
 
-+++ curl
-```bash
-# Exemple de requête 
 
-curl -X 'POST' 'https://api.bantu.dev/accounts' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "name": "account-name",
-    "email": "developer@email.com"
-  }'
 
-```
-+++ rest client (vscode)
 ```graphql
-@baseUrl = https://api.bantu.dev
+# rest client (vscode)
+@baseUrl = https://sandbox.bantu.dev
 
-### ------------------------------------------------------------------------------
-### Créer votre compte développeur
-### ------------------------------------------------------------------------------
+## Créer votre compte développeur
 
 POST {{baseUrl}}/accounts
 Content-Type: application/json
@@ -51,14 +45,12 @@ Content-Type: application/json
     "email": "developer@email.com" # Email utilisée pour vous transmettre votre clé d'API.
 }
 ```
-+++
 
 
 Si votre requête est valide, vous recevrez une réponse JSON avec la structure suivante:
 
 ```json
 {
-  "success": true,
   "accountId": "acc_1ib0yvl75q92b", # Identifiant unique de votre compte
   "message": "The api-key was sent to the provided email address"
 }
@@ -68,7 +60,7 @@ Si votre requête est valide, vous recevrez une réponse JSON avec la structure 
 Nous transmettons la clé d'API à votre email pour en effectuer la vérification en même temps.
 !!!
 
-Lorsque la création du comtpe développeur abouti, le mail transmis contient les informations suivantes:
+Lorsque la création du comtpe développeur aboutit, le mail transmis contient les informations suivantes:
 
 
 ``` Exemple d'email
@@ -81,7 +73,7 @@ Il est donc important de bien conserver ces informations. En cas d'oubli, une AP
 
 
 !!!warning
-Arpès création de votre compte développeur, si la clé d'API n'est pas utilisée pour créer une application au bout de 7 jours, le compte est
+Arpès création de votre compte développeur, si la clé d'API n'est pas utilisée pour créer une application au bout de 14 jours, le compte est
 automatiquement détruit avec un email de notification.
 !!!
 
