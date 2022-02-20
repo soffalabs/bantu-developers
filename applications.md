@@ -80,7 +80,12 @@ Dans les informations qui sont retournées après création de l'application, le
 1. `id + skTest` vous permet d'accéder à votre environnement de **test**
 2. `id + skLive` vous permet d'accéder à votre environnement de **live**
 
-<img src="/static/img/bantu_todos_keys.png" alt="" width="500" />
+<picture>
+  <source
+    srcset="/static/img/bantu_todos_keys_dark.png"
+    media="(prefers-color-scheme: dark)">
+  <img src="/static/img/bantu_todos_keys.png" alt="" width="780" />
+</picture>
 
 Ainsi, pour récupér la liste des TODOS ou rajouter une TODO dans votre environnement de test, la requête suivante est valide :
 

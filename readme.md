@@ -17,7 +17,14 @@ et la valeur ajoutée de l'offre.
 
 Dans la conception de l'architecture, les principaux choix suivants ont été arrêtés :
 
-<img src="./static/img/bantu_archi_1.png" alt="" width="700" />
+<picture>
+  <source
+    srcset="./static/img/bantu_archi_1_dark.png"
+    media="(prefers-color-scheme: dark)">
+  <img src="./static/img/bantu_archi_1.png" alt="" width="780" />
+</picture>
+
+<p>&nbsp;</p>
 
 ### Api Gateway
 
