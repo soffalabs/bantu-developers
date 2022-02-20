@@ -7,14 +7,14 @@ title: Bien démarrer
 
 Les points d'entrées suivants sont mis à votre disposition :
 
-- https://sandbox.bantu.dev  - Sandbox
+- https://sandbox.bantu.dev  - Sandbox (Cet environnement de test est réinitialisé de façon régulière)
 - https://api.bantu.dev  - Production (Disponible plus tard)
 
 
 Pour développer avec Bantu, les étapes suivantes sont à suivre:
 
-1. Créer un compte développeur pour récupérer une clé d'API de type compte
-2. Créer une application pour récupérer des clés d'API de type application
+1. Créer un compte développeur pour récupérer une clé d'API de type **Account** (`ak_`)
+2. Créer une application pour récupérer des clés d'API de type **Application** (`sk_` ou `pk_`)
 3. Utiliser les clés d'api de type application pour exploiter le reste du catalogue d'APIs
 
 !!!
@@ -26,8 +26,7 @@ le plugin <a href="https://marketplace.visualstudio.com/items?itemName=humao.res
 
 ## Compte développeur
 
-Pour commencer à utiliser les APIs de la plateforme, la création d'un compte développeur est nécessaire.
-Ceci est possible via <a href="https://sandbox.bantu.dev/accounts/swagger-ui.html" target="_blank">l'API Accounts</a>.
+La création d'un compte développeur se fait grâce au service <a href="https://sandbox.bantu.dev/accounts/swagger-ui.html" target="_blank">Accounts</a>.
 
 
 
@@ -57,7 +56,7 @@ Si votre requête est valide, vous recevrez une réponse JSON avec la structure 
 ```
 
 !!! 
-Nous transmettons la clé d'API à votre email pour en effectuer la vérification en même temps.
+Nous transmettons la clé d'API à votre email pour en effectuer la vérification.
 !!!
 
 Lorsque la création du comtpe développeur aboutit, le mail transmis contient les informations suivantes:
@@ -69,12 +68,14 @@ Your account id is acc_t4htyy32n1va
 Your api key is ak_VrDi2KTxKQeR5Zf9DV6GX
 ```
 
-Il est donc important de bien conserver ces informations. En cas d'oubli, une API permet de renvoyer ces informations toujours par email.
+> Le template de mail sera plus user-friendly avant notre passage en production :)
+
+Il est donc important de bien conserver ces informations. En cas d'oubli, il est possible demander un renvoi de votre clé d'API Account par email (la même fournie lors de la création).
 
 
 !!!warning
-Arpès création de votre compte développeur, si la clé d'API n'est pas utilisée pour créer une application au bout de 14 jours, le compte est
-automatiquement détruit avec un email de notification.
+Arpès création de votre compte développeur, si la clé d'API n'est pas utilisée pour créer une application au bout de 7 jours, le compte est
+automatiquement détruit avec un email de notification quelques jours à l'avance (offre cloud uniquement).
 !!!
 
 ### Unicité de l'email

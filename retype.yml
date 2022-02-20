@@ -17,4 +17,4 @@ links:
   link: https://github.com/orgs/DigitalBantu/dashboard
   icon: mark-github
 footer:
-  copyright: "By Startup Station, {{ year }}"
+  copyright: "Bantu.dev, {{ year }}"
