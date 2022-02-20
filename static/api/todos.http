@@ -1,0 +1,54 @@
+@baseUrl = https://api.bantu.dev/todos
+@apikey = rak_YgcfExCTl9Dz46WgkaNni
+@appId = app_rhit3k8ldw6x
+@skTest = sk_test_43qJvNW1RJ6nDQNR0uMKR
+@skLive = sk_live_rwNZQTyNfeU36q0qYEsZF
+
+GET {{baseUrl}}/actuator/health
+
+
+### GetPrometheusMetrics
+
+GET {{baseUrl}}/actuator/metrics/
+
+
+### ---------------------------------------------------------
+### TEST ENV
+### ---------------------------------------------------------
+
+### GetTodoList 
+
+GET {{baseUrl}}/v1
+Authorization: Basic {{appId}}:{{skTest}}
+
+### AddTodo
+
+POST {{baseUrl}}/v1
+Authorization: Basic {{appId}}:{{skTest}}
+Content-Type: application/json
+
+{
+    "content": "Release Bantu 02"
+}
+
+
+
+### ---------------------------------------------------------
+### LIVE ENV
+### ---------------------------------------------------------
+
+
+### GetTodoList 
+
+GET {{baseUrl}}/v1
+Authorization: Basic {{appId}}:{{skLive}}
+
+### AddTodo
+
+POST {{baseUrl}}/v1
+Authorization: Basic {{appId}}:{{skLive}}
+Content-Type: application/json
+
+{
+    "content": "Release Bantu 02"
+}
