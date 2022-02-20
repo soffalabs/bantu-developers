@@ -24,12 +24,12 @@
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/resources/css/retype.css?v=1.11.2.698624768427" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.698636466118" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.698624768427" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.698636466118" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.698624768427" defer></script>
-    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.2.698624768427" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.698636466118" defer></script>
+    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.2.698636466118" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -263,10 +263,10 @@ Authorization: Basic {{apikey}}:
     &quot;accountId&quot;: &quot;acc_1iukwdd80pjxs&quot;, # ID du compte auquel est lié cette application
     &quot;name&quot;: &quot;test-app&quot;, # Nom de l'application
     &quot;description&quot;: &quot;Hello world&quot;, # Description de l'application
-    &quot;pkTest&quot;: &quot;pk_test_75UcmFeohlyQmwPlSd--w&quot;, # Clé privée de production
-    &quot;skTest&quot;: &quot;sk_test_woNOBFe94pe5_ErHkyWqKE&quot;, # Clé publique de production
-    &quot;pkLive&quot;: &quot;pk_live_uyO9mdn_kGi9ov0yJVD6v&quot;, # Clé privée de test
-    &quot;skLive&quot;: &quot;sk_live_85XknhLMcGS67A3ch6p91&quot;, # Clé publique de test
+    &quot;pkTest&quot;: &quot;pk_test_75UcmFeohlyQmwPlSd--w&quot;, # Clé publique de test
+    &quot;skTest&quot;: &quot;sk_test_woNOBFe94pe5_ErHkyWqKE&quot;, # Clé privée de test
+    &quot;pkLive&quot;: &quot;pk_live_uyO9mdn_kGi9ov0yJVD6v&quot;, # Clé publique de production
+    &quot;skLive&quot;: &quot;sk_live_85XknhLMcGS67A3ch6p91&quot;, # Clé privée de production
     &quot;createdAt&quot;: &quot;2022-02-08T21:58:10.689+00:00&quot; # Date de création du compte
   }
 }</code></pre>
@@ -283,9 +283,58 @@ Ce simple service vous permet de comprendre rapidement les principes de bases qu
 <p>Trois opérations sont disponibles :</p>
 <ol>
 <li>Visualiser les TODO</li>
-<li>Rajouter <em>une</em> TODO (si l&#x27;on considère que TODO est une action/tâche)</li>
+<li>Rajouter *une TODO (si l&#x27;on considère que TODO est une action/tâche)</li>
 <li>Marquer une TODO comme terminée</li>
 </ol>
+<p>Dans les informations qui sont retournées après création de l&#x27;application, les couples suivants sont les plus importants:</p>
+<ol>
+<li><code v-pre>id + skTest</code> vous permet d&#x27;accéder à votre environnement de <strong>test</strong></li>
+<li><code v-pre>id + skLive</code> vous permet d&#x27;accéder à votre environnement de <strong>live</strong></li>
+</ol>
+<img src="/static/img/bantu_todos_keys.png" alt="" width="500" />
+<p>Ainsi, pour récupér la liste des TODOS ou rajouter une TODO dans votre environnement de test, la requête suivante est valide :</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-graphql"><code v-pre class="language-graphql">@baseUrl = https://sandbox.bantu.dev/todos
+@appId = app_1ib9893gdtlcz
+@secret = sk_test_woNOBFe94pe5_ErHkyWqKE
+
+### GetTodoList 
+GET {{baseUrl}}/v1
+Authorization: Basic {{appId}}:{{secret}}
+
+### AddTodo
+
+POST {{baseUrl}}/v1
+Authorization: Basic {{appId}}:{{secret}}
+Content-Type: application/json
+
+{
+    &quot;content&quot;: &quot;Product roadmap for the next quarter&quot;
+}
+</code></pre>
+</doc-codeblock></div>
+<p>Pour travailler dans votre environnement de production (live), vous l&#x27;aurez compris, la seule ligne à changer est</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-graphql"><code v-pre class="language-graphql">@secret = sk_live_85XknhLMcGS67A3ch6p91</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3">
+<p>À ce stade vous devriez disposer de suffisamment d&#x27;information pour créer un compte, une application et commencer à manipuler
+l&#x27;API Todos. En cas d&#x27;anomalie</p>
+        </div>
+    </div>
+</div>
 
 
 
@@ -327,7 +376,7 @@ Ce simple service vous permet de comprendre rapidement les principes de bases qu
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>By Startup Station, 2022</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>Bantu.dev, 2022</p>
 </div>
 </footer>
 

@@ -8,29 +8,29 @@
     <!-- Primary Meta Tags -->
     <title>Introduction | Bantu</title>
     <meta name="title" content="Introduction | Bantu">
-    <meta name="description" content="Bantu est une offre ( Backend As A Service) permettant aux développeurs de créer certaines solutions plus simplement en se basant sur" />
+    <meta name="description" content="Bantu est un catalogue de services mis à la disposition des entreprises pour permettre à leurs équipes de développement de se concentrer" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://developers.bantu.dev/">
     <meta property="og:title" content="Introduction | Bantu">
-    <meta property="og:description" content="Bantu est une offre ( Backend As A Service) permettant aux développeurs de créer certaines solutions plus simplement en se basant sur">
-    <meta property="og:image" content="https://developers.bantu.dev/static/img/bantu-archi.png">
+    <meta property="og:description" content="Bantu est un catalogue de services mis à la disposition des entreprises pour permettre à leurs équipes de développement de se concentrer">
+    <meta property="og:image" content="https://developers.bantu.dev/static/img/service_discovery.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://developers.bantu.dev/">
     <meta property="twitter:title" content="Introduction | Bantu">
-    <meta property="twitter:description" content="Bantu est une offre ( Backend As A Service) permettant aux développeurs de créer certaines solutions plus simplement en se basant sur">
-    <meta property="twitter:image" content="https://developers.bantu.dev/static/img/bantu-archi.png">
+    <meta property="twitter:description" content="Bantu est un catalogue de services mis à la disposition des entreprises pour permettre à leurs équipes de développement de se concentrer">
+    <meta property="twitter:image" content="https://developers.bantu.dev/static/img/service_discovery.png">
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/resources/css/retype.css?v=1.11.2.698624768427" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.698636466118" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.698624768427" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.698636466118" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.698624768427" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.698636466118" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -208,68 +208,134 @@
         <span>Introduction</span>
     </h1>
 </doc-anchor-target>
-<p>Bantu est une offre (<em>Backend As A Service</em>) permettant aux développeurs de créer certaines solutions plus simplement en se basant sur
-un catalogue de services.</p>
-<p>Cette offre permet de ne pas réinventer la roue à plusieurs égards tout en offrant une certaine flexibilité  pour des besoins spécifiques
-même si tout est fait pour réduire ces scénarios.</p>
-<p>Tout au long de cette documentation (orientée développeurs), plusieurs exemples concrets seront apportés pour illustrer l&#x27;usage
+<p>Bantu est un catalogue de services mis à la disposition des entreprises pour permettre à leurs équipes de développement de se concentrer
+uniquement sur le frontend (web ou mobile).</p>
+<p>L&#x27;offre est disponible en mode Cloud public et privé. L&#x27;architecture de la solution est modulaire en se basant sur des solutions robustes du marché
+pour simplifier l&#x27;intégration en entreprise.</p>
+<p>Tout au long de cette documentation, plusieurs exemples concrets seront apportés pour illustrer l&#x27;usage
 et la valeur ajoutée de l&#x27;offre.</p>
-<doc-anchor-target id="architecture">
+<doc-anchor-target id="architecture-de-référence">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#architecture">#</doc-anchor-trigger>
-        <span>Architecture</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#architecture-de-référence">#</doc-anchor-trigger>
+        <span>Architecture de référence</span>
     </h2>
 </doc-anchor-target>
-<p>Ci-après la version actuelle de l&#x27;architecture :</p>
+<p>Dans la conception de l&#x27;architecture, les principaux choix suivants ont été arrêtés :</p>
+<img src="./static/img/bantu_archi_1.png" alt="" width="700" />
+<doc-anchor-target id="api-gateway">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#api-gateway">#</doc-anchor-trigger>
+        <span>Api Gateway</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>L&#x27;Api Gateway est le seul point d&#x27;entrée unique. Il n&#x27;est pas possible de consommer directement un service sans passer par l&#x27;Api Gateway.</li>
+<li>L&#x27;Api Gateway n&#x27;est pas une solution open-source (Kong, etc), il s&#x27;agit d&#x27;un développement propore à la solution pour servir nos besoins spécifiques</li>
+</ul>
+<doc-anchor-target id="service-registry">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#service-registry">#</doc-anchor-trigger>
+        <span>Service Registry</span>
+    </h3>
+</doc-anchor-target>
 <p><figure class="content-center">
-    <img src="static/img/bantu-archi.png" alt="" />
+    <img src="static/img/service_discovery.png" alt="" />
     <figcaption class="caption"></figcaption>
 </figure>
 </p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>Composant</th>
-<th>Implémentation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>BD</td>
-<td>PostgreSQL</td>
-</tr>
-<tr>
-<td>Cache</td>
-<td>Redis</td>
-</tr>
-<tr>
-<td>Monitoring</td>
-<td>Grafana, Prometheus, Alertmanager, Loki</td>
-</tr>
-<tr>
-<td>Analytics</td>
-<td>InfluxDB, Prometheus</td>
-</tr>
-<tr>
-<td>Config</td>
-<td>Vault</td>
-</tr>
-<tr>
-<td>Service Registry</td>
-<td>Consul</td>
-</tr>
-<tr>
-<td>Streaming</td>
-<td>NATS.io</td>
-</tr>
-<tr>
-<td>Messages Provider*</td>
-<td>Offre cloud (Twilio) - Offre hébergée (varie)</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li>Tous les composants de la solution sont inscrits dans un service registry (Consul)</li>
+<li>L&#x27;Api Gateway construit le routage sur la base des tags associés à chaque service</li>
+</ul>
+<doc-anchor-target id="gestion-des-secrets">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#gestion-des-secrets">#</doc-anchor-trigger>
+        <span>Gestion des secrets</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Tous les informations sensibles utilisées pour s&#x27;authentifier ou sécuriser des données ou communications sont stockées dans Vault</li>
+<li>L&#x27;authentification mutuelle entre composant se repose sur les certificats gérés par Vault</li>
+</ul>
+<doc-anchor-target id="échanges-internes">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#échanges-internes">#</doc-anchor-trigger>
+        <span>Échanges internes</span>
+    </h3>
+</doc-anchor-target>
+<p>Le coeur de la communication interne entre services est le serveur de Streaming <a href="https://nats.io/">NATS</a>. Dans cette architecture,
+la seule communication HTTP, est celle transmise par les développeurs. Toutes les autres communications sont binaires et passent
+par des événements (pattern PUB/SUB). Le bus d&#x27;événements NATS et configuré pour persister les messages sur disque (Jetstream).</p>
+<doc-anchor-target id="cache-distributé">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cache-distributé">#</doc-anchor-trigger>
+        <span>Cache distributé</span>
+    </h3>
+</doc-anchor-target>
+<p>Toutes les données mises en cache sont par défaut distribuées à travers un cluster Redis.</p>
+<doc-anchor-target id="persistence">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#persistence">#</doc-anchor-trigger>
+        <span>Persistence</span>
+    </h3>
+</doc-anchor-target>
+<p>Le seule SGABD utilisé dans l&#x27;architecture est PostgreSQL avec un système de migration automatique des schémas de données.</p>
+<doc-anchor-target id="multitenancy">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#multitenancy">#</doc-anchor-trigger>
+        <span>Multitenancy</span>
+    </h3>
+</doc-anchor-target>
+<p>Bantu est avant tout une offre de type SaaS. Quel que soit le mode d&#x27;hébergement, public ou privé, vous pouvez disposez
+de plusieurs &quot;clients&quot; différents ayant chacuns leurs données séparées les uns des autres.</p>
+<doc-anchor-target id="observabilité">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#observabilité">#</doc-anchor-trigger>
+        <span>Observabilité</span>
+    </h3>
+</doc-anchor-target>
+<p>La solution est développée en mettant l&#x27;observabilité et les métriques au premier rang avec une intégration bas niveau
+avec les solutions InfluxDB, Prometheus, Grafana, Loki et Alertmanager.</p>
+<doc-anchor-target id="référence-dapi">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#référence-dapi">#</doc-anchor-trigger>
+        <span>Référence d&#x27;API</span>
+    </h2>
+</doc-anchor-target>
+<p>L&#x27;API Bantu est organisée autour de <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>.
+Notre API suit une nomenclature intuitive, accepte des contenus de messages en JSON, retourne des réponses JSON et
+utilise les codes HTTP standards: <a href="https://httpstatuses.com">httpstatuses.com</a>.</p>
+<div class="flex mb-6">
+    <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3">
+<p>Une version GraphQL de l&#x27;API sera mise à diposition dans un futur proche.</p>
+        </div>
+    </div>
 </div>
+<p>L&#x27;API Bantu peut être, en tout temps, utilisée en mode test pour ne pas affecter vos données de production (live).
+Une séparation physique des données est mise en place. La clé d&#x27;API utilisée permet d&#x27;identifier l&#x27;environnement actif.</p>
+<doc-anchor-target id="authentification">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#authentification">#</doc-anchor-trigger>
+        <span>Authentification</span>
+    </h2>
+</doc-anchor-target>
+<p>À l&#x27;exception d&#x27;un nombre très réduit d&#x27;opérations, l&#x27;API Bantu requiert une authentification de type <code v-pre>Account</code> ou de type <code v-pre>Application</code>.
+La section suivante vous explique plus en détails comment créer et utiliser ces deux types de clés d&#x27;API.</p>
+<p>Une clé d&#x27;API liée à un environnement de test contiendra toujours le suffixe <code v-pre>_test</code> par opposition à <code v-pre>_live</code> pour votre environnement de production.</p>
+<p>Nous rappelons l&#x27;important de toujours bien conserver de façon sécurisés ces clés d&#x27;APIs.</p>
+<p>Le mode d&#x27;authentification <code v-pre>Basic</code> est utilisé au niveau de l&#x27;API.</p>
+<p>Toutes les requêtes doivent être effectuées en mode HTTPS. Tout appel HTTP est automatiquement rejeté.</p>
 
 
 
@@ -304,7 +370,7 @@ et la valeur ajoutée de l&#x27;offre.</p>
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>By Startup Station, 2022</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>Bantu.dev, 2022</p>
 </div>
 </footer>
 

@@ -24,12 +24,12 @@
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/resources/css/retype.css?v=1.11.2.698624768427" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/resources/css/retype.css?v=1.11.2.698636466118" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.698624768427" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.698636466118" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.698624768427" defer></script>
-    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.2.698624768427" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.698636466118" defer></script>
+    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.2.698636466118" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -209,13 +209,13 @@
 </doc-anchor-target>
 <p>Les points d&#x27;entrées suivants sont mis à votre disposition :</p>
 <ul>
-<li><a href="https://sandbox.bantu.dev">https://sandbox.bantu.dev</a>  - Sandbox</li>
+<li><a href="https://sandbox.bantu.dev">https://sandbox.bantu.dev</a>  - Sandbox (Cet environnement de test est réinitialisé de façon régulière)</li>
 <li><a href="https://api.bantu.dev">https://api.bantu.dev</a>  - Production (Disponible plus tard)</li>
 </ul>
 <p>Pour développer avec Bantu, les étapes suivantes sont à suivre:</p>
 <ol>
-<li>Créer un compte développeur pour récupérer une clé d&#x27;API de type compte</li>
-<li>Créer une application pour récupérer des clés d&#x27;API de type application</li>
+<li>Créer un compte développeur pour récupérer une clé d&#x27;API de type <strong>Account</strong> (<code v-pre>ak_</code>)</li>
+<li>Créer une application pour récupérer des clés d&#x27;API de type <strong>Application</strong> (<code v-pre>sk_</code> ou <code v-pre>pk_</code>)</li>
 <li>Utiliser les clés d&#x27;api de type application pour exploiter le reste du catalogue d&#x27;APIs</li>
 </ol>
 <div class="flex mb-6">
@@ -242,8 +242,7 @@ le plugin <a href="https://marketplace.visualstudio.com/items?itemName=humao.res
         <span>Compte développeur</span>
     </h2>
 </doc-anchor-target>
-<p>Pour commencer à utiliser les APIs de la plateforme, la création d&#x27;un compte développeur est nécessaire.
-Ceci est possible via <a href="https://sandbox.bantu.dev/accounts/swagger-ui.html" target="_blank">l&#x27;API Accounts</a>.</p>
+<p>La création d&#x27;un compte développeur se fait grâce au service <a href="https://sandbox.bantu.dev/accounts/swagger-ui.html" target="_blank">Accounts</a>.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-graphql"><code v-pre class="language-graphql"># rest client (vscode)
 @baseUrl = https://sandbox.bantu.dev
@@ -278,7 +277,7 @@ Content-Type: application/json
             </svg>
         </div>
         <div class="pr-5 ml-3">
-<p>Nous transmettons la clé d&#x27;API à votre email pour en effectuer la vérification en même temps.</p>
+<p>Nous transmettons la clé d&#x27;API à votre email pour en effectuer la vérification.</p>
         </div>
     </div>
 </div>
@@ -289,7 +288,10 @@ Content-Type: application/json
 Your account id is acc_t4htyy32n1va
 Your api key is ak_VrDi2KTxKQeR5Zf9DV6GX</code></pre>
 </doc-codeblock></div>
-<p>Il est donc important de bien conserver ces informations. En cas d&#x27;oubli, une API permet de renvoyer ces informations toujours par email.</p>
+<blockquote>
+<p>Le template de mail sera plus user-friendly avant notre passage en production :)</p>
+</blockquote>
+<p>Il est donc important de bien conserver ces informations. En cas d&#x27;oubli, il est possible demander un renvoi de votre clé d&#x27;API Account par email (la même fournie lors de la création).</p>
 <div class="flex mb-6">
     <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -302,8 +304,8 @@ Your api key is ak_VrDi2KTxKQeR5Zf9DV6GX</code></pre>
             </svg>
         </div>
         <div class="pr-5 ml-3">
-<p>Arpès création de votre compte développeur, si la clé d&#x27;API n&#x27;est pas utilisée pour créer une application au bout de 14 jours, le compte est
-automatiquement détruit avec un email de notification.</p>
+<p>Arpès création de votre compte développeur, si la clé d&#x27;API n&#x27;est pas utilisée pour créer une application au bout de 7 jours, le compte est
+automatiquement détruit avec un email de notification quelques jours à l&#x27;avance (offre cloud uniquement).</p>
         </div>
     </div>
 </div>
@@ -370,7 +372,7 @@ la demande sera rejetée avec la réponse suivante :</p>
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>By Startup Station, 2022</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>Bantu.dev, 2022</p>
 </div>
 </footer>
 
