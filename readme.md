@@ -4,8 +4,8 @@ icon: home
 ---
 # Introduction
 
-Bantu est un catalogue de services mis à la disposition des entreprises pour permettre à leurs équipes de développement de se concentrer 
-uniquement sur le frontend (web ou mobile).
+Bantu est un catalogue de services mis à la disposition des entreprises pour permettre à leurs équipes de développement de 
+construire sur des briques fonctionnelles et techniques existantes, et gagner ainsi en productivité.
 
 L'offre est disponible en mode Cloud public et privé. L'architecture de la solution est modulaire en se basant sur des solutions robustes du marché
 pour simplifier l'intégration en entreprise.
@@ -66,6 +66,10 @@ de plusieurs "clients" différents ayant chacuns leurs données séparées les u
 
 La solution est développée en mettant l'observabilité et les métriques au premier rang avec une intégration bas niveau
 avec les solutions InfluxDB, Prometheus, Grafana, Loki et Alertmanager.
+
+### Technologie
+
+La solution est développée essentiellement en Java et Kotlin en se reposant sur les accélérateurs techniques proposés par <a href="https://github.com/soffa-io" title="" target="_blank">SOFFA</a>.
 
 
 ## Référence d'API
