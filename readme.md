@@ -17,12 +17,7 @@ et la valeur ajoutée de l'offre.
 
 Dans la conception de l'architecture, les principaux choix suivants ont été arrêtés :
 
-<picture>
-  <source
-    srcset="./static/img/bantu_archi_1_dark.png"
-    media="(prefers-color-scheme: dark)">
-  <img src="./static/img/bantu_archi_1.png" alt="" width="780" />
-</picture>
+<img src="./static/img/bantu_archi_1_dark.png" alt="" width="780" />
 
 <p>&nbsp;</p>
 
@@ -46,8 +41,8 @@ Dans la conception de l'architecture, les principaux choix suivants ont été ar
 ### Échanges internes
 
 Le coeur de la communication interne entre services est le serveur de Streaming [NATS](https://nats.io/). Dans cette architecture,
-la seule communication HTTP, est celle transmise par les développeurs. Toutes les autres communications sont binaires et passent
-par des événements (pattern PUB/SUB). Le bus d'événements NATS et configuré pour persister les messages sur disque (Jetstream).
+la seule communication HTTP, est celle transmise par les développeurs. Toutes les autres communications passent
+par des événements. Le bus d'événements NATS et configuré pour persister les messages sur disque (Jetstream).
 
 ### Cache distributé
 

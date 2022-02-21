@@ -7,14 +7,20 @@ meta:
 branding:
   title: Bantu
   label: developers
-  logo: static/img/logo5.svg
-  logoDark: static/img/logo5.svg
+  #logo: static/img/logo5.svg
+  #logoDark: static/img/logo5.svg
 links:
 - text: Accueil
   link: https://developers.bantu.dev
   icon: home
+- text: Discussions
+  link: https://github.com/soffa-io/bantu-developers/discussions
+  icon: comment-discussion
+  target: _blank
 - text: Github
-  link: https://github.com/orgs/DigitalBantu/dashboard
+  link: https://github.com/soffa-io/bantu-developers
   icon: mark-github
+  target: _blank
+
 footer:
-  copyright: "Bantu.dev, {{ year }}"
+  copyright: "SOFFA, {{ year }}"
