@@ -9,21 +9,18 @@
     <meta name="turbo-cache-control" content="no-cache">
 
     <!-- Primary Meta Tags -->
-    <title>Catalogue | Bantu</title>
-    <meta name="title" content="Catalogue | Bantu">
-    <meta name="description" content="La suite de cette documentation présente les différents produits présent dans le catalogue en suivante" />
+    <title>Accounts | Bantu</title>
+    <meta name="title" content="Accounts | Bantu">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://developers.bantu.dev/catalog/">
-    <meta property="og:title" content="Catalogue | Bantu">
-    <meta property="og:description" content="La suite de cette documentation présente les différents produits présent dans le catalogue en suivante">
+    <meta property="og:url" content="https://developers.bantu.dev/accounts/accounts/">
+    <meta property="og:title" content="Accounts | Bantu">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://developers.bantu.dev/catalog/">
-    <meta property="twitter:title" content="Catalogue | Bantu">
-    <meta property="twitter:description" content="La suite de cette documentation présente les différents produits présent dans le catalogue en suivante">
+    <meta property="twitter:url" content="https://developers.bantu.dev/accounts/accounts/">
+    <meta property="twitter:title" content="Accounts | Bantu">
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -212,176 +209,12 @@
                 <div id="docs-sidebar-right-toggle"></div>
                
                 <!-- Page content  -->
-<doc-anchor-target id="catalogue" class="break-words">
+<doc-anchor-target id="accounts" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#catalogue">#</doc-anchor-trigger>
-        <span>Catalogue</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#accounts">#</doc-anchor-trigger>
+        <span>Accounts</span>
     </h1>
 </doc-anchor-target>
-<p>La suite de cette documentation présente les différents produits présent dans le catalogue en suivante
-la démarche suivante :</p>
-<ol>
-<li>Roadmap</li>
-<li>Documentation</li>
-<li>Cas d&#x27;utilisations (si applicables)</li>
-</ol>
-<doc-anchor-target id="statut-dun-produit">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#statut-dun-produit">#</doc-anchor-trigger>
-        <span>Statut d&#x27;un Produit</span>
-    </h2>
-</doc-anchor-target>
-<p>Chaque  produit suit rigoureusement le cycle de release suivant (dans cet ordre) :</p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>Phase</th>
-<th>Description</th>
-<th>Environnements</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-gray-700 dark:text-dark-600 bg-white border border-gray-300 dark:border-transparent h-6 px-2 text-xs rounded-md">
-    <span>BACKLOG</span>
-</span></td>
-<td>Qualification du produit</td>
-<td></td>
-</tr>
-<tr>
-<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-6 px-2 text-xs rounded-md">
-    <span>DESIGN</span>
-</span></td>
-<td>Conception de l&#x27;API Produit et plan de développement</td>
-<td></td>
-</tr>
-<tr>
-<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-red-600 bg-red-100 h-6 px-2 text-xs rounded-md">
-    <span>ALPHA</span>
-</span></td>
-<td>Le produit est accessible mais instable</td>
-<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-5 px-1.5 text-2xs rounded">
-    <span>TEST</span>
-</span></td>
-</tr>
-<tr>
-<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-6 px-2 text-xs rounded-md">
-    <span>BETA</span>
-</span></td>
-<td>Le produit est accessible avec une meilleur stabilité</td>
-<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-5 px-1.5 text-2xs rounded">
-    <span>TEST</span>
-</span></td>
-</tr>
-<tr>
-<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-6 px-2 text-xs rounded-md">
-    <span>RC</span>
-</span></td>
-<td>La couverture fonctionnelle est achevée, le focus est désormais mis sur la stabilité et corrections de bugs</td>
-<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-5 px-1.5 text-2xs rounded">
-    <span>TEST</span>
-</span> <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-5 px-1.5 text-2xs rounded">
-    <span>PROD</span>
-</span></td>
-</tr>
-<tr>
-<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-white bg-gray-700 dark:bg-dark-450 h-6 px-2 text-xs rounded-md">
-    <span>GA</span>
-</span></td>
-<td>Le produit est disponible pour une exploitation en production</td>
-<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-gray-600 dark:text-dark-600 bg-gray-200 h-5 px-1.5 text-2xs rounded">
-    <span>TEST</span>
-</span> <span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-5 px-1.5 text-2xs rounded">
-    <span>PROD</span>
-</span></td>
-</tr>
-</tbody>
-</table>
-</div>
-<doc-anchor-target id="produits-disponibles">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#produits-disponibles">#</doc-anchor-trigger>
-        <span>Produits disponibles</span>
-    </h2>
-</doc-anchor-target>
-<p>Chaque produit rajouté au catalogue est toujours issu d&#x27;un besoin métier et d&#x27;une collaboration avec des clients B2B.</p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>Produit</th>
-<th>Description</th>
-<th>Statut</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Accounts</strong></td>
-<td>Gestion de votre comptes et applications</td>
-<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-yellow-900 bg-yellow-100 h-5 px-1.5 text-2xs rounded">
-    <span>BETA</span>
-</span></td>
-</tr>
-<tr>
-<td><strong>Activity</strong></td>
-<td>Suivi d&#x27;activité et gestion de projet simplifiée</td>
-<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-gray-700 dark:text-dark-600 bg-white border border-gray-300 dark:border-transparent h-5 px-1.5 text-2xs rounded">
-    <span>BACKLOG</span>
-</span></td>
-</tr>
-<tr>
-<td><strong>Content</strong></td>
-<td>Gestion de contenu</td>
-<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-gray-700 dark:text-dark-600 bg-white border border-gray-300 dark:border-transparent h-5 px-1.5 text-2xs rounded">
-    <span>BACKLOG</span>
-</span></td>
-</tr>
-<tr>
-<td><strong>Directory</strong></td>
-<td>Gestion d&#x27;annuaire de personnes et lieux</td>
-<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-gray-700 dark:text-dark-600 bg-white border border-gray-300 dark:border-transparent h-5 px-1.5 text-2xs rounded">
-    <span>BACKLOG</span>
-</span></td>
-</tr>
-<tr>
-<td><strong>E-commerce</strong></td>
-<td>Boutiques, Produits, Operations, Livraisons</td>
-<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-gray-700 dark:text-dark-600 bg-white border border-gray-300 dark:border-transparent h-5 px-1.5 text-2xs rounded">
-    <span>BACKLOG</span>
-</span></td>
-</tr>
-<tr>
-<td><strong>Fleet</strong></td>
-<td>Gestion et suivi de flotte + Localisation</td>
-<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-gray-700 dark:text-dark-600 bg-white border border-gray-300 dark:border-transparent h-5 px-1.5 text-2xs rounded">
-    <span>BACKLOG</span>
-</span></td>
-</tr>
-<tr>
-<td><strong>Invoicing</strong></td>
-<td>Facturation simplifiée</td>
-<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-gray-700 dark:text-dark-600 bg-white border border-gray-300 dark:border-transparent h-5 px-1.5 text-2xs rounded">
-    <span>BACKLOG</span>
-</span></td>
-</tr>
-<tr>
-<td><strong>Messaging</strong></td>
-<td>Envoi de mails, sms, notifications pushs</td>
-<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-5 px-1.5 text-2xs rounded">
-    <span>DESIGN</span>
-</span></td>
-</tr>
-<tr>
-<td><strong>Payments</strong></td>
-<td>Intégration avec services de paiements populaires</td>
-<td><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-5 px-1.5 text-2xs rounded">
-    <span>DESIGN</span>
-</span></td>
-</tr>
-</tbody>
-</table>
-</div>
 
 
 
@@ -393,20 +226,20 @@ la démarche suivante :</p>
             
 <nav class="flex mt-14">
     <div class="w-1/2">
-        <a class="px-5 py-4 h-full flex items-center break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/start/">
+        <a class="px-5 py-4 h-full flex items-center break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/accounts/product/">
             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
             <span>
                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                <span class="block mt-1">Bien démarrer</span>
+                <span class="block mt-1">Produit</span>
             </span>
         </a>
     </div>
 
     <div class="w-1/2">
-        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/accounts/product/">
+        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/accounts/applications/">
             <span>
                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                <span class="block mt-1">Produit</span>
+                <span class="block mt-1">Applications</span>
             </span>
             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
         </a>
@@ -454,6 +287,6 @@ la démarche suivante :</p>
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "Catalogue", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+        <script>window.__DOCS__ = { "title": "Accounts", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
     </body>
 </html>
