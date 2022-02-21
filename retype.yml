@@ -24,3 +24,7 @@ links:
 
 footer:
   copyright: "SOFFA, {{ year }}"
+
+integrations:
+  googleAnalytics:
+    id: G-LCZPLJEKJW
