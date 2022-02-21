@@ -64,7 +64,7 @@ avec les solutions InfluxDB, Prometheus, Grafana, Loki et Alertmanager.
 
 ### Technologie
 
-La solution est développée essentiellement en Java et Kotlin en se reposant sur les accélérateurs techniques proposés par <a href="https://github.com/soffa-io" title="" target="_blank">SOFFA</a>.
+La solution est développée essentiellement en Java et Kotlin en se reposant sur les accélérateurs techniques proposés par <a href="https://github.com/soffalabs" title="" target="_blank">SOFFA</a>.
 
 
 ## Référence d'API

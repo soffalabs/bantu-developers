@@ -14,11 +14,11 @@ links:
   link: https://developers.bantu.dev
   icon: home
 - text: Discussions
-  link: https://github.com/soffa-io/bantu-developers/discussions
+  link: https://github.com/soffalabs/bantu-developers/discussions
   icon: comment-discussion
   target: _blank
 - text: Github
-  link: https://github.com/soffa-io/bantu-developers
+  link: https://github.com/soffalabs/bantu-developers
   icon: mark-github
   target: _blank
 
