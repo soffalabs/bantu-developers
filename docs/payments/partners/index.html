@@ -9,18 +9,21 @@
     <meta name="turbo-cache-control" content="no-cache">
 
     <!-- Primary Meta Tags -->
-    <title>Produit | Bantu</title>
-    <meta name="title" content="Produit | Bantu">
+    <title>Partneaires | Bantu</title>
+    <meta name="title" content="Partneaires | Bantu">
+    <meta name="description" content="Un partenaire est un service utilisé pour effectuer un paiement auprès d'un utilisateur en passant par un canal spécifique." />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://developers.bantu.dev/directory/product/">
-    <meta property="og:title" content="Produit | Bantu">
+    <meta property="og:url" content="https://developers.bantu.dev/payments/partners/">
+    <meta property="og:title" content="Partneaires | Bantu">
+    <meta property="og:description" content="Un partenaire est un service utilisé pour effectuer un paiement auprès d'un utilisateur en passant par un canal spécifique.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://developers.bantu.dev/directory/product/">
-    <meta property="twitter:title" content="Produit | Bantu">
+    <meta property="twitter:url" content="https://developers.bantu.dev/payments/partners/">
+    <meta property="twitter:title" content="Partneaires | Bantu">
+    <meta property="twitter:description" content="Un partenaire est un service utilisé pour effectuer un paiement auprès d'un utilisateur en passant par un canal spécifique.">
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -29,6 +32,7 @@
     <script type="text/javascript" src="/resources/js/config.js?v=1.11.2.699059333949" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
     <script id="lunr-js" type="text/javascript" src="/resources/js/lunr.js?v=1.11.2.699059333949" defer></script>
+    <script id="prism-js" type="text/javascript" src="/resources/js/prism.js?v=1.11.2.699059333949" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -209,12 +213,208 @@
                 <div id="docs-sidebar-right-toggle"></div>
                
                 <!-- Page content  -->
-<doc-anchor-target id="produit" class="break-words">
+<doc-anchor-target id="partneaires" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#produit">#</doc-anchor-trigger>
-        <span>Produit</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#partneaires">#</doc-anchor-trigger>
+        <span>Partneaires</span>
     </h1>
 </doc-anchor-target>
+<p>Un partenaire est un service utilisé pour effectuer un paiement auprès d&#x27;un utilisateur en passant par un canal spécifique.</p>
+<doc-anchor-target id="activer-un-partenaire">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#activer-un-partenaire">#</doc-anchor-trigger>
+        <span>Activer un partenaire</span>
+    </h2>
+</doc-anchor-target>
+<p>Cette action est exécuter pour activer un partenaire ou changer les informations d&#x27;un partenaire.</p>
+<div class="flex mb-6">
+    <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3">
+<p>Une apiKey de type <strong>account-admin</strong> est requise pour accéder à cette ressource</p>
+        </div>
+    </div>
+</div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-graphql"><code v-pre class="language-graphql">
+@baseUrl = https://sandbox.bantu.dev/payments
+@apikey = rak_00000000000
+
+# ConfigureGateway
+PUT {{baseUrl}}/v1/partners/:partner-id
+Content-Type: application/json
+Authorization: Basic {{apikey}}:
+
+{
+    &quot;url&quot;: &quot;https://url-partner&quot;
+}
+</code></pre>
+</doc-codeblock></div>
+<p>Les <code v-pre>partner-id</code> supportés actuellement sont:</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked" /> <code v-pre>orange-money</code></li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <code v-pre>sama-money</code></li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" /> <code v-pre>paypal</code></li>
+</ul>
+<doc-anchor-target id="statut-dun-partenaire">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#statut-dun-partenaire">#</doc-anchor-trigger>
+        <span>Statut d&#x27;un partenaire</span>
+    </h2>
+</doc-anchor-target>
+<p>Pour un partenaire activé, l&#x27;opération suivante permettre de vérifier si la communication (réseau) avec ce partenaire est fonctionnelle.</p>
+<div class="flex mb-6">
+    <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3">
+<p>Cette ressource est accessible sans authentification</p>
+        </div>
+    </div>
+</div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-graphql"><code v-pre class="language-graphql">@baseUrl = https://sandbox.bantu.dev/payments
+GET {{baseUrl}}/v1/partners/:partner-id/status</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="configurer-un-partenaire">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configurer-un-partenaire">#</doc-anchor-trigger>
+        <span>Configurer un partenaire</span>
+    </h2>
+</doc-anchor-target>
+<p>Pour intégrer des paiements à votre application, il est nécessaire de configurer un partenaire (préalablement activé).
+Cette configuration consite à fournir les informations d&#x27;authentification propres à votre usage.</p>
+<p>En effet, Si <strong>Bantu</strong> permet aux développeurs d&#x27;effectuer des paiements via Paypal par exemple, il est de la responsabilité
+du développeur (ou de l&#x27;entreprise) de créer le compte Paypal et de renseigner les informations nécessaires pour communiquer
+avec l&#x27;API Paypal.</p>
+<p>Cette ressource <code v-pre>ConfigurePartner</code> vous permet de fournir ces informations en question.</p>
+<div class="flex mb-6">
+    <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3">
+<p>Cette ressource est accessible avec votre cle <code v-pre>skTest</code> ou <code v-pre>skLive</code> (clés d&#x27;application)</p>
+        </div>
+    </div>
+</div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-graphql"><code v-pre class="language-graphql">
+@baseUrl = https://sandbox.bantu.dev/payments
+@apikey = sk_xxxxxxxxxxxxxxxx
+
+# ConfigureGateway
+PUT {{baseUrl}}/v1/partners/:partner-id/config
+Content-Type: application/json
+Authorization: Basic {{apikey}}:
+
+{
+    clientId: &quot;xxxxxxx&quot;, 
+    clientSecret: &quot;xxxxxxxx&quot;, 
+    merchantId: &quot;xxxxxxxxx&quot;,
+    token: &quot;xxxxxxxxxxxx&quot;
+}
+</code></pre>
+</doc-codeblock></div>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Configuration</th>
+<th>orange-money</th>
+<th>sama-money</th>
+<th>paypal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>clientId</code></td>
+<td>Obligatoire</td>
+<td>Obligatoire</td>
+<td></td>
+</tr>
+<tr>
+<td><code v-pre>clientSecret</code></td>
+<td>Obligatoire</td>
+<td>Obligatoire</td>
+<td></td>
+</tr>
+<tr>
+<td><code v-pre>merchantId</code></td>
+<td>Obligatoire</td>
+<td>Obligatoire</td>
+<td></td>
+</tr>
+<tr>
+<td><code v-pre>token</code></td>
+<td></td>
+<td>Obligatoire</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Les informations transmises sont validées avant d&#x27;être enregistrées.
+En cas de donnée absente, vous recevrez donc un message explicite.</p>
+<doc-anchor-target id="vérifier-la-configuration">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#vérifier-la-configuration">#</doc-anchor-trigger>
+        <span>Vérifier la configuration</span>
+    </h2>
+</doc-anchor-target>
+<p>Une fois le partnaire configurée pour votre instance applicative, vous pouvez configurer un monitoring en
+consommant la ressource suivante avec votre clé publique.</p>
+<div class="flex mb-6">
+    <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3">
+<p>Cette ressource est accessible avec votre cle <code v-pre>pkTest</code> ou <code v-pre>pkLive</code> (clés d&#x27;application)</p>
+        </div>
+    </div>
+</div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-graphql"><code v-pre class="language-graphql">
+@baseUrl = https://sandbox.bantu.dev/payments
+@apikey = pk_xxxxxxxxxxxxxxxx
+
+# CheckPartnerStatus
+GET {{baseUrl}}/v1/partners/:partner-id/check
+Content-Type: application/json
+Authorization: Basic {{apikey}}:
+</code></pre>
+</doc-codeblock></div>
 
 
 
@@ -226,23 +426,16 @@
             
 <nav class="flex mt-14">
     <div class="w-1/2">
-        <a class="px-5 py-4 h-full flex items-center break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/content/product/">
+        <a class="px-5 py-4 h-full flex items-center break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/payments/product/">
             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
             <span>
                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                <span class="block mt-1">Produit</span>
+                <span class="block mt-1">Payments</span>
             </span>
         </a>
     </div>
 
     <div class="w-1/2">
-        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/e-commerce/product/">
-            <span>
-                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                <span class="block mt-1">Produit</span>
-            </span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-        </a>
     </div>
 </nav>
 
@@ -287,6 +480,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "Produit", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+        <script>window.__DOCS__ = { "title": "Partneaires", icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
     </body>
 </html>
