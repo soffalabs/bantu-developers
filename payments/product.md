@@ -1,11 +1,15 @@
 ---
 order: 1000
-title: Payments
+title: Produit
 icon: dash
 ---
 
 Le produit **Payments** permet l'intégration avec certaines partenaires de paiements. Cette liste est enrichie au fur
 et à mesure des cas d'utilisation.
+
+| Product       | URL                                   | Version       |
+|-              |-                                      |-              |
+| **Payments**  |  https://sandbox.bantu.dev/payments/  | [!badge variant="danger" text="1.0.0-alpha-1"] |
 
 ## Roadmap
 
@@ -15,11 +19,4 @@ et à mesure des cas d'utilisation.
 | Intégration du partenaire Sama Money      |  [!badge variant="dark" text="BACKLOG" size="s"]              |
 | Intégration du partenaire Paypal          |  [!badge variant="dark" text="BACKLOG" size="s"]              |
 
-
-## Documentation API
-
-La documentation de l'API Produit est disponible en format suivants:
-
-- [OpenAPI / Swagger](https://sandbox.bantu.dev/payments/swagger-ui/index.html) 
-- [Redoc](https://sandbox.bantu.dev/payments)
 

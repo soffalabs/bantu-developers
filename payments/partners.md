@@ -1,5 +1,5 @@
 ---
-title: Partneaires
+title: Partenaires
 icon: dash
 ---
 
