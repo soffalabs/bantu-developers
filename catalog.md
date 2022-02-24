@@ -41,4 +41,4 @@ Chaque produit rajouté au catalogue est toujours issu d'un besoin métier et d'
 | **Fleet**      | Gestion et suivi de flotte + Localisation         | [!badge variant="light" text="BACKLOG" size="s"]  |
 | **Invoicing**  | Facturation simplifiée                            | [!badge variant="light" text="BACKLOG" size="s"]  |
 | **Messaging**  | Envoi de mails, sms, notifications pushs          | [!badge variant="primary" text="DESIGN" size="s"]  |
-| **Payments**   | Intégration avec services de paiements populaires | [!badge variant="primary" text="DESIGN" size="s"]  |
+| **Payments**   | Intégration avec services de paiements populaires | [!badge variant="danger" text="ALPHA" size="s"]  |
