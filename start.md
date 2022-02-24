@@ -35,7 +35,7 @@ La création d'un compte développeur se fait grâce au service <a href="https:/
 
 ## Créer votre compte développeur
 
-POST {{baseUrl}}/accounts
+POST {{baseUrl}}/accounts/v1
 Content-Type: application/json
 
 {
